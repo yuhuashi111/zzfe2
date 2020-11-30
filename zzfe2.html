@@ -10,28 +10,7 @@
 
 <body>
 <script>
-	function Stack(){
-		this.items = [];
-		Stack.prototype.push = function(element){
-			this.items.push(element)
-		}
-		Stack.prototype.pop = function(element){
-			return this.items.pop()
-		}
-		Stack.prototype.isEmpty = function(){
-			return this.item.length==0
-		}
-		Stack.prototype.size = function(){
-			return this.item.length
-		}
-		Stack.prototype.toString = function(){
-			var resString = ''
-			for(var i = 0;i < this.item.length;i++){
-				resString += this.item[i] + ' '
-			}
-			return resString
-		}
-	}
+
 	function TreeNode(val,left,right){
 		var val;
 		var left;
@@ -74,8 +53,7 @@
 	D.setRight(G)
 	G.setLeft(J)
 
-	var tree=[A,B,C,D,E,F,G,H,I,J]
-// var tree=[A,B,D,C,E,F,G,null,null,H,I,null,null,J,null];
+
 
 	var levelOrder=function(root){
 	var queue = [];
@@ -98,7 +76,6 @@
 		str+=i
 		str+=" "
 		i++
-		// console.log(i++)
 		for(var j=0;j<level.length;j++){
 			str+=level[j].val;
 		}
@@ -118,34 +95,3 @@ levelOrder(A)
 
 </body>
 </html>
-<!-- 
-
-function TreeNode(){
-	this.val=val;
-	this.left=this.right=null;
-}
-var tree=[A,B,D,C,E,F,G,null,null,H,I,null,null,J,null];
-var tree=['A','B','D','C','E','F','G',null,null,'H','I',null,null,'J',null];
-
-var levelOrder=function(root){
-	var queue = [];
-	var res = [];
-	if(root!=null) queue.push(root);
-	while(queue.length!=0){
-		var level = [];
-		int size=queue.length;
-		for(int i=0;i<size;i++){
-		var temp=queue.shift();
-		if(temp!=null)
-		level.push(temp);
-		if(temp.left!=null) queue.push(temp.left);
-		if(temp.right!=null) queue.push(temp.right);
-		
-		}
-		res.push(level);
-
-	}
-	
-	
-};
-console.log(printTree(tree)); -->
